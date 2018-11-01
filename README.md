@@ -144,6 +144,17 @@ git checkout HEAD^
 ![iamge](https://raw.githubusercontent.com/zdy793410600/Knowledge_Git/master/Git_HEAD/git_checkout_head09.png)
 ![iamge](https://raw.githubusercontent.com/zdy793410600/Knowledge_Git/master/Git_HEAD/git_checkout_head10.png)  
 
+* 将HEAD指向某次提交指定<num>次的之前的位置
+
+```
+git checkout <某次提交记录> ~<num>  
+```
+* 将HEAD指向当前HEAD指定<num>次的之前的位置
+
+```
+git checkout HEAD ~<num>  
+```
+
 #### 6.3、分离HEAD - 强制修改分支位置
 你现在是相对引用的专家了，现在用它来做点实际事情。
 
@@ -155,6 +166,4 @@ git branch -f master HEAD~3
 
 ![iamge](https://raw.githubusercontent.com/zdy793410600/Knowledge_Git/master/Git_HEAD/git_checkout_head11.png)
 ![iamge](https://raw.githubusercontent.com/zdy793410600/Knowledge_Git/master/Git_HEAD/git_checkout_head12.png)  
-
-
 
