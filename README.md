@@ -141,6 +141,9 @@ git checkout HEAD^
 
 该操作符后面可以跟一个数字（可选，不跟数字时与 ^ 相同，向上移动一次），指定向上移动多少次。咱们还是通过实际操作看一下吧
 
+![iamge](https://raw.githubusercontent.com/zdy793410600/Knowledge_Git/master/Git_HEAD/git_checkout_head09.png)
+![iamge](https://raw.githubusercontent.com/zdy793410600/Knowledge_Git/master/Git_HEAD/git_checkout_head10.png)  
+
 #### 6.3、分离HEAD - 强制修改分支位置
 你现在是相对引用的专家了，现在用它来做点实际事情。
 
