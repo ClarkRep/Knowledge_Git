@@ -83,3 +83,40 @@ Rebase 的优势就是可以创造更线性的提交历史，这听上去有些�
 ```
 git rebase <想要合并到当前分支的其他分支的名称>
 ```
+
+#### 分离HEAD - 在提交树上移动
+在接触 Git 更高级功能之前，我们有必要先学习在你项目的提交树上前后移动的几种方法。
+
+一旦熟悉了如何在 Git 提交树上移动，你驾驭其它命令的能力也将水涨船高！
+
+我们首先看一下 “HEAD”。 HEAD 是一个对当前检出记录的符号引用 —— 也就是指向你正在其基础上进行工作的提交记录。
+
+HEAD 总是指向当前分支上最近一次提交记录。大多数修改提交树的 Git 命令都是从改变 HEAD 的指向开始的。
+
+HEAD 通常情况下是指向分支名的（如 bugFix）。在你提交时，改变了 bugFix 的状态，这一变化通过 HEAD 变得可见。
+![image](https://raw.githubusercontent.com/zdy793410600/Knowledge_Git/master/Git_HEAD/git_checkout_head1.png)
+![iamge](https://raw.githubusercontent.com/zdy793410600/Knowledge_Git/master/Git_HEAD/git_checkout_head2.png)
+![iamge](https://raw.githubusercontent.com/zdy793410600/Knowledge_Git/master/Git_HEAD/git_checkout_head3.png)
+![iamge](https://raw.githubusercontent.com/zdy793410600/Knowledge_Git/master/Git_HEAD/git_checkout_head4.png)
+
+
+* 将HEAD指向某次提交记录
+```
+git checkout <某次提交的记录>
+```
+
+#### 分离HEAD - 相对引用
+通过指定提交记录哈希值的方式在 Git 中移动不太方便。在实际应用时，并没有像本程序中这么漂亮的可视化提交树供你参考，所以你就不得不用 git log 来查查看提交记录的哈希值。
+
+并且哈希值在真实的 Git 世界中也会更长（译者注：基于 SHA-1，共 40 位）。例如前一关的介绍中的提交记录的哈希值可能是 fed2da64c0efc5293610bdd892f82a58e8cbc5d8。舌头都快打结了吧...
+
+比较令人欣慰的是，Git 对哈希的处理很智能。你只需要提供能够唯一标识提交记录的前几个字符即可。因此我可以仅输入fed2 而不是上面的一长串字符。
+
+正如我前面所说，通过哈希值指定提交记录很不方便，所以 Git 引入了相对引用。这个就很厉害了!
+
+使用相对引用的话，你就可以从一个易于记忆的地方（比如 bugFix 分支或 HEAD）开始计算。
+
+相对引用非常给力，这里我介绍两个简单的用法：
+
+使用 ^ 向上移动 1 个提交记录
+使用 ~<num> 向上移动多个提交记录，如 ~3
