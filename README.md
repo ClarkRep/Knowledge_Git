@@ -148,7 +148,13 @@ git checkout HEAD^
 你现在是相对引用的专家了，现在用它来做点实际事情。
 
 我使用相对引用最多的就是移动分支。可以直接使用 -f 选项让分支指向另一个提交。例如:
-
+```
 git branch -f master HEAD~3
-
+```
 上面的命令会将 master 分支强制指向 HEAD 的第 3 级父提交。
+
+![iamge](https://raw.githubusercontent.com/zdy793410600/Knowledge_Git/master/Git_HEAD/git_checkout_head11.png)
+![iamge](https://raw.githubusercontent.com/zdy793410600/Knowledge_Git/master/Git_HEAD/git_checkout_head12.png)  
+
+
+
