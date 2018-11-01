@@ -118,11 +118,34 @@ git checkout <某次提交的记录>
 
 相对引用非常给力，这里我介绍两个简单的用法：
 
-使用 ^ 向上移动 1 个提交记录
-使用 ~<num> 向上移动多个提交记录，如 ~3
+使用 ^ 向上移动 1 个提交记录  
+使用 ~<num> 向上移动多个提交记录，如 ~3  
   
-### 6.1、分离HEAD - "^"操作符
+#### 6.1、分离HEAD - "^"操作符
 ![iamge](https://raw.githubusercontent.com/zdy793410600/Knowledge_Git/master/Git_HEAD/git_checkout_head05.png)
 ![iamge](https://raw.githubusercontent.com/zdy793410600/Knowledge_Git/master/Git_HEAD/git_checkout_head06.png)
 ![iamge](https://raw.githubusercontent.com/zdy793410600/Knowledge_Git/master/Git_HEAD/git_checkout_head07.png)
-![iamge](https://raw.githubusercontent.com/zdy793410600/Knowledge_Git/master/Git_HEAD/git_checkout_head08.png)
+![iamge](https://raw.githubusercontent.com/zdy793410600/Knowledge_Git/master/Git_HEAD/git_checkout_head08.png)  
+
+* 将HEAD指定到某次提交的上一级
+```
+git checkout <某次提交的记录>^
+```
+* 将HEAD指定到当前HEAD指向位置的上一级
+```
+git checkout HEAD^
+```
+
+#### 6.2、分离HEAD - "~"操作符
+如果你想在提交树中向上移动很多步的话，敲那么多 ^ 貌似也挺烦人的，Git 当然也考虑到了这一点，于是又引入了操作符 ~。
+
+该操作符后面可以跟一个数字（可选，不跟数字时与 ^ 相同，向上移动一次），指定向上移动多少次。咱们还是通过实际操作看一下吧
+
+#### 6.3、分离HEAD - 强制修改分支位置
+你现在是相对引用的专家了，现在用它来做点实际事情。
+
+我使用相对引用最多的就是移动分支。可以直接使用 -f 选项让分支指向另一个提交。例如:
+
+git branch -f master HEAD~3
+
+上面的命令会将 master 分支强制指向 HEAD 的第 3 级父提交。
