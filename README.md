@@ -121,5 +121,8 @@ git checkout <某次提交的记录>
 使用 ^ 向上移动 1 个提交记录
 使用 ~<num> 向上移动多个提交记录，如 ~3
   
-### 6.1 分离HEAD - "^"操作符
-
+### 6.1、分离HEAD - "^"操作符
+![iamge](https://raw.githubusercontent.com/zdy793410600/Knowledge_Git/master/Git_HEAD/git_checkout_head05.png)
+![iamge](https://raw.githubusercontent.com/zdy793410600/Knowledge_Git/master/Git_HEAD/git_checkout_head06.png)
+![iamge](https://raw.githubusercontent.com/zdy793410600/Knowledge_Git/master/Git_HEAD/git_checkout_head07.png)
+![iamge](https://raw.githubusercontent.com/zdy793410600/Knowledge_Git/master/Git_HEAD/git_checkout_head08.png)
