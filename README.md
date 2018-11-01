@@ -94,10 +94,10 @@ git rebase <想要合并到当前分支的其他分支的名称>
 HEAD 总是指向当前分支上最近一次提交记录。大多数修改提交树的 Git 命令都是从改变 HEAD 的指向开始的。
 
 HEAD 通常情况下是指向分支名的（如 bugFix）。在你提交时，改变了 bugFix 的状态，这一变化通过 HEAD 变得可见。
-![image](https://raw.githubusercontent.com/zdy793410600/Knowledge_Git/master/Git_HEAD/git_checkout_head1.png)
-![iamge](https://raw.githubusercontent.com/zdy793410600/Knowledge_Git/master/Git_HEAD/git_checkout_head2.png)
-![iamge](https://raw.githubusercontent.com/zdy793410600/Knowledge_Git/master/Git_HEAD/git_checkout_head3.png)
-![iamge](https://raw.githubusercontent.com/zdy793410600/Knowledge_Git/master/Git_HEAD/git_checkout_head4.png)
+![image](https://raw.githubusercontent.com/zdy793410600/Knowledge_Git/master/Git_HEAD/git_checkout_head01.png)
+![iamge](https://raw.githubusercontent.com/zdy793410600/Knowledge_Git/master/Git_HEAD/git_checkout_head02.png)
+![iamge](https://raw.githubusercontent.com/zdy793410600/Knowledge_Git/master/Git_HEAD/git_checkout_head03.png)
+![iamge](https://raw.githubusercontent.com/zdy793410600/Knowledge_Git/master/Git_HEAD/git_checkout_head04.png)
 
 
 * 将HEAD指向某次提交记录
@@ -105,7 +105,7 @@ HEAD 通常情况下是指向分支名的（如 bugFix）。在你提交时，�
 git checkout <某次提交的记录>
 ```
 
-### 5.1、分离HEAD - 相对引用
+### 6、分离HEAD - 相对引用
 通过指定提交记录哈希值的方式在 Git 中移动不太方便。在实际应用时，并没有像本程序中这么漂亮的可视化提交树供你参考，所以你就不得不用 git log 来查查看提交记录的哈希值。
 
 并且哈希值在真实的 Git 世界中也会更长（译者注：基于 SHA-1，共 40 位）。例如前一关的介绍中的提交记录的哈希值可能是 fed2da64c0efc5293610bdd892f82a58e8cbc5d8。舌头都快打结了吧...
@@ -118,5 +118,34 @@ git checkout <某次提交的记录>
 
 相对引用非常给力，这里我介绍两个简单的用法：
 
-使用 ^ 向上移动 1 个提交记录
-使用 ~<num> 向上移动多个提交记录，如 ~3
+使用 ^ 向上移动 1 个提交记录  
+使用 ~<num> 向上移动多个提交记录，如 ~3  
+  
+#### 6.1、分离HEAD - "^"操作符
+![iamge](https://raw.githubusercontent.com/zdy793410600/Knowledge_Git/master/Git_HEAD/git_checkout_head05.png)
+![iamge](https://raw.githubusercontent.com/zdy793410600/Knowledge_Git/master/Git_HEAD/git_checkout_head06.png)
+![iamge](https://raw.githubusercontent.com/zdy793410600/Knowledge_Git/master/Git_HEAD/git_checkout_head07.png)
+![iamge](https://raw.githubusercontent.com/zdy793410600/Knowledge_Git/master/Git_HEAD/git_checkout_head08.png)  
+
+* 将HEAD指定到某次提交的上一级
+```
+git checkout <某次提交的记录>^
+```
+* 将HEAD指定到当前HEAD指向位置的上一级
+```
+git checkout HEAD^
+```
+
+#### 6.2、分离HEAD - "~"操作符
+如果你想在提交树中向上移动很多步的话，敲那么多 ^ 貌似也挺烦人的，Git 当然也考虑到了这一点，于是又引入了操作符 ~。
+
+该操作符后面可以跟一个数字（可选，不跟数字时与 ^ 相同，向上移动一次），指定向上移动多少次。咱们还是通过实际操作看一下吧
+
+#### 6.3、分离HEAD - 强制修改分支位置
+你现在是相对引用的专家了，现在用它来做点实际事情。
+
+我使用相对引用最多的就是移动分支。可以直接使用 -f 选项让分支指向另一个提交。例如:
+
+git branch -f master HEAD~3
+
+上面的命令会将 master 分支强制指向 HEAD 的第 3 级父提交。
