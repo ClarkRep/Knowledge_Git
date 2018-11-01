@@ -94,10 +94,10 @@ git rebase <想要合并到当前分支的其他分支的名称>
 HEAD 总是指向当前分支上最近一次提交记录。大多数修改提交树的 Git 命令都是从改变 HEAD 的指向开始的。
 
 HEAD 通常情况下是指向分支名的（如 bugFix）。在你提交时，改变了 bugFix 的状态，这一变化通过 HEAD 变得可见。
-![image](https://raw.githubusercontent.com/zdy793410600/Knowledge_Git/master/Git_HEAD/git_checkout_head1.png)
-![iamge](https://raw.githubusercontent.com/zdy793410600/Knowledge_Git/master/Git_HEAD/git_checkout_head2.png)
-![iamge](https://raw.githubusercontent.com/zdy793410600/Knowledge_Git/master/Git_HEAD/git_checkout_head3.png)
-![iamge](https://raw.githubusercontent.com/zdy793410600/Knowledge_Git/master/Git_HEAD/git_checkout_head4.png)
+![image](https://raw.githubusercontent.com/zdy793410600/Knowledge_Git/master/Git_HEAD/git_checkout_head01.png)
+![iamge](https://raw.githubusercontent.com/zdy793410600/Knowledge_Git/master/Git_HEAD/git_checkout_head02.png)
+![iamge](https://raw.githubusercontent.com/zdy793410600/Knowledge_Git/master/Git_HEAD/git_checkout_head03.png)
+![iamge](https://raw.githubusercontent.com/zdy793410600/Knowledge_Git/master/Git_HEAD/git_checkout_head04.png)
 
 
 * 将HEAD指向某次提交记录
@@ -105,7 +105,7 @@ HEAD 通常情况下是指向分支名的（如 bugFix）。在你提交时，�
 git checkout <某次提交的记录>
 ```
 
-### 5.1、分离HEAD - 相对引用
+### 6、分离HEAD - 相对引用
 通过指定提交记录哈希值的方式在 Git 中移动不太方便。在实际应用时，并没有像本程序中这么漂亮的可视化提交树供你参考，所以你就不得不用 git log 来查查看提交记录的哈希值。
 
 并且哈希值在真实的 Git 世界中也会更长（译者注：基于 SHA-1，共 40 位）。例如前一关的介绍中的提交记录的哈希值可能是 fed2da64c0efc5293610bdd892f82a58e8cbc5d8。舌头都快打结了吧...
@@ -120,3 +120,6 @@ git checkout <某次提交的记录>
 
 使用 ^ 向上移动 1 个提交记录
 使用 ~<num> 向上移动多个提交记录，如 ~3
+  
+### 6.1 分离HEAD - "^"操作符
+
