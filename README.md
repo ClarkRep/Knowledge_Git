@@ -1,8 +1,6 @@
 ## Knowledge_Git
 本篇笔记是根据在Github上的一个Git使用教程总结的各种命令及使用方法[learnGitBranching](https://github.com/pcottle/learnGitBranching)
 
-* [1、本地提交 - commit](### 1、本地提交 - commit)
-
 ### 1、本地提交 - commit
 Git 仓库中的提交记录保存的是你的目录下所有文件的快照，就像是把整个目录复制，然后再粘贴一样，但比复制粘贴优雅许多！
 
