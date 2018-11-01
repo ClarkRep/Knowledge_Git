@@ -167,3 +167,26 @@ git branch -f master HEAD~3
 ![iamge](https://raw.githubusercontent.com/zdy793410600/Knowledge_Git/master/Git_HEAD/git_checkout_head11.png)
 ![iamge](https://raw.githubusercontent.com/zdy793410600/Knowledge_Git/master/Git_HEAD/git_checkout_head12.png)  
 
+### 7、撤销变更
+在 Git 里撤销变更的方法很多。和提交一样，撤销变更由底层部分（暂存区的独立文件或者片段）和上层部分（变更到底是通过哪种方式被撤销的）组成。我们这个应用主要关注的是后者。
+
+主要有两种方法用来撤销变更 —— 一是 git reset，还有就是 git revert。接下来咱们逐个进行讲解。
+
+#### 7.1、撤销变更 - reset
+![iamge](https://raw.githubusercontent.com/zdy793410600/Knowledge_Git/master/Git_HEAD/git_reset_head01.png)
+![iamge](https://raw.githubusercontent.com/zdy793410600/Knowledge_Git/master/Git_HEAD/git_reset_head02.png)  
+
+* 撤销当前HEAD的上<num>次提交  
+  
+```
+git reset HEAD~<num>
+```
+
+#### 7.2、撤销变更 - revert
+![iamge](https://raw.githubusercontent.com/zdy793410600/Knowledge_Git/master/Git_HEAD/git_revert_head01.png)
+![iamge](https://raw.githubusercontent.com/zdy793410600/Knowledge_Git/master/Git_HEAD/git_revert_head02.png)  
+
+* 撤销指定某次提交
+```
+git revert <某次提交记录>
+```
